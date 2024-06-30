@@ -7,7 +7,7 @@ defmodule Commanded.EventStore.Adapters.Spear.Mixfile do
     [
       app: :commanded_spear_adapter,
       version: @version,
-      elixir: "~> 1.13",
+      elixir: "~> 1.17",
       elixirc_paths: elixirc_paths(Mix.env()),
       consolidate_protocols: Mix.env() != :test,
       description: description(),
@@ -37,7 +37,8 @@ defmodule Commanded.EventStore.Adapters.Spear.Mixfile do
 
   defp deps do
     [
-      {:commanded, "~> 1.4"},
+      # {:commanded, "~> 1.4"},
+      {:commanded, github: "pauldemarco/commanded", branch: "1.17.1-otp-27"},
       {:spear, "~> 1.4.0"},
       # Test & build tooling
       {:ex_doc, "~> 0.21", only: :dev},
